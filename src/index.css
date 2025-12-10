@@ -1,13 +1,163 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 80% 45%;
+    --foreground: 180 100% 70%;
+
+    --card: 270 70% 35%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 270 70% 35%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 270 80% 20%;
+
+    --secondary: 270 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 270 50% 40%;
+    --muted-foreground: 270 20% 80%;
+
+    --accent: 180 100% 70%;
+    --accent-foreground: 270 80% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 270 50% 55%;
+    --input: 270 50% 30%;
+    --ring: 180 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(270 80% 45%) 0%, hsl(280 70% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(270 70% 40%) 0%, hsl(270 70% 30%) 100%);
+    --shadow-glow: 0 0 30px hsl(180 100% 50% / 0.3);
+    --shadow-card: 0 10px 40px hsl(270 80% 20% / 0.5);
+
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+  }
+
+  .dark {
+    --background: 270 80% 45%;
+    --foreground: 180 100% 70%;
+    --card: 270 70% 35%;
+    --card-foreground: 0 0% 100%;
+    --popover: 270 70% 35%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 270 80% 20%;
+    --secondary: 270 60% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 50% 40%;
+    --muted-foreground: 270 20% 80%;
+    --accent: 180 100% 70%;
+    --accent-foreground: 270 80% 20%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 270 50% 55%;
+    --input: 270 50% 30%;
+    --ring: 180 100% 50%;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-card-foreground font-semibold text-sm uppercase tracking-wider transition-all duration-300 hover:text-accent;
+  }
+
+  .social-icon {
+    @apply w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-card-foreground transition-all duration-300 hover:bg-accent hover:text-accent-foreground hover:scale-110;
+  }
+
+  .article-card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[var(--shadow-glow)];
+  }
+
+  .article-card-image {
+    @apply w-full h-48 object-cover transition-transform duration-500;
+  }
+
+  .article-card:hover .article-card-image {
+    @apply scale-110;
+  }
+
+  .search-input {
+    @apply w-full bg-card-foreground/10 backdrop-blur-sm border-0 rounded-l-full px-6 py-4 text-card-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent;
+  }
+
+  .search-button {
+    @apply bg-secondary hover:bg-accent text-card-foreground hover:text-accent-foreground px-8 py-4 rounded-r-full transition-all duration-300;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-card-foreground text-center tracking-widest;
+  }
+
+  .read-more {
+    @apply text-accent font-semibold text-sm hover:underline transition-all duration-300;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(180 100% 50% / 0.5);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(180 100% 50% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(180 100% 50% / 0.6);
+    }
+  }
 }

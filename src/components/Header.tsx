@@ -5,7 +5,7 @@ const navLinks = [
     { label: "Listas", href: "#listas" },
     { label: "Guias", href: "#guias" },
     { label: "Reviews", href: "#reviews" },
-    { label: "Compras", href: "#compras" },
+    // { label: "Compras", href: "#compras" },
 ];
 
 const Header = () => {

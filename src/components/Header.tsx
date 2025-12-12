@@ -35,15 +35,15 @@ const Header = () => {
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-3">
-                        <a href="#" className="social-icon" aria-label="Instagram">
+                        {/* <a href="#" className="social-icon" aria-label="Instagram">
                             <Instagram className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="social-icon" aria-label="YouTube">
+                        </a> */}
+                        <a href="https://www.youtube.com/@DescabaGeek" className="social-icon" aria-label="YouTube">
                             <Youtube className="w-5 h-5" />
                         </a>
-                        <a href="#" className="social-icon" aria-label="TikTok">
+                        {/* <a href="#" className="social-icon" aria-label="TikTok">
                             <Music2 className="w-5 h-5" />
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>

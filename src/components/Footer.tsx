@@ -18,15 +18,10 @@ const Footer = () => {
 
                     {/* Social Icons */}
                     <div className="flex items-center gap-4">
-                        <a href="#" className="social-icon" aria-label="Instagram">
-                            <Instagram className="w-5 h-5" />
-                        </a>
-                        <a href="#" className="social-icon" aria-label="YouTube">
+                        <a href="https://www.youtube.com/@DescabaGeek" className="social-icon" aria-label="YouTube">
                             <Youtube className="w-5 h-5" />
                         </a>
-                        <a href="#" className="social-icon" aria-label="TikTok">
-                            <Music2 className="w-5 h-5" />
-                        </a>
+
                     </div>
 
                     {/* Copyright */}

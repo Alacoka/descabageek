@@ -1,4 +1,5 @@
 import { Instagram, Youtube, Music2 } from "lucide-react";
+import Logo from "../img/logo_no_bg.png";
 
 const navLinks = [
     { label: "Agenda", href: "#agenda" },
@@ -16,7 +17,7 @@ const Header = () => {
                     {/* Logo */}
                     <a href="/" className="flex items-center gap-3 group">
                         <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center animate-float">
-                            <span className="text-2xl">👾</span>
+                            <img src={Logo} alt="Descaba Geek Logo" className="w-12 h-10 group-hover:rotate-12 transition-transform duration-300" />
                         </div>
                         <div className="font-display">
                             <div className="text-card-foreground font-bold text-lg tracking-wider">DESCABA</div>
